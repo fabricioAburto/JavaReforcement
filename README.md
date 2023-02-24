@@ -1,5 +1,5 @@
 # JavaReforcement ☕
-This repo belong to a course that I am providing to set of colleagues: Beyling, Fabricio
+This repo belong to a face-to-face course that I am providing to set of colleagues: Beyling, Fabricio
 
 ⚠ This repo is not about learning to program, this course 
 is about learn Java and its syntax.
