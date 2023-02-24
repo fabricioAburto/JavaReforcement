@@ -95,9 +95,9 @@ Case II: Save the an employee salary
 double salary = 2300.89d;
 ```
 
-#### Type Casting
+#### Type Casting 💪🏼
 
-Something we can get some situations when we work with two different type of numbers and we have to solve that need. For doing that, we have to cases:
+Something we can get some situations when we work with two different type of numbers and we have to solve that need. For doing that, we have two cases:
 
 ##### Widening Casting
 This type of casting is automatically always the following flow: when the value to convert is smaller than the desired one.
