@@ -132,4 +132,34 @@ This type of casting is the opposite of the **Widening Casting** and because of 
   System.out.println(num); // it will be: 12
 ```
 
+
+#### Another Cases
+
+Another case you can face while learning is the arithmetic operations over those data types (Numerics). Imagine you have a `double` value, and you need to run an arithmetic operation with an `int` value.
+The question here is: what data type will be the result of that operation?
+
+So here is a table of those combinations:
+
+| Type 1 | Type 2 | Resulting type |
+|--------|--------|----------------|
+| byte   | short  | int            |
+| short  | int    | int            |
+ | int    | long   | long           |
+| long   | float  | float          |
+| float  | double | double         |
+
+
 And with this we end our Java Data Types study! 
+
+
+### Working with truth values (Booelans)
+
+Sometimes you will need to decide about things, and one data type that can help is the `boolean` data type, which can be `true` or `false` only.
+
+
+```java
+boolean isPremium = true;
+boolean isOnline = false;
+```
+
+An important aspect of this data type is that can be created in combination of some `boolean expressions` that we will see soon.
