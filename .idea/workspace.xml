@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b596b7d6-2ef6-4005-b51d-42dd922ee2bf" name="Changes" comment="adding docs">
+    <list default="true" id="b596b7d6-2ef6-4005-b51d-42dd922ee2bf" name="Changes" comment="docs: booleans data types">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -84,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677261456265</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="docs: booleans data types">
+      <created>1677323885273</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677323885273</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setup: base project" />
     <MESSAGE value="adding docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding docs" />
+    <MESSAGE value="docs: booleans data types" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: booleans data types" />
   </component>
 </project>

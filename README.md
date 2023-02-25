@@ -163,3 +163,145 @@ boolean isOnline = false;
 ```
 
 An important aspect of this data type is that can be created in combination of some `boolean expressions` that we will see soon.
+
+
+## Strings
+
+[String Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+
+`String` class is custom data type, and I decided to talk about it in its own point **String and Printing** because is very special and the topic about it is a little interested.
+
+**String** data type helps us to store text. Also is important (very important) to know that an `String` is build base on a collection of `character`s, but we can treat it as a single unit.
+**String** data type is a class, and so we can create instances, so how we can create instance of a `String`?
+
+### How to create String instances
+
+#### Literales
+
+You can create an `String` using double quotes, like:
+
+```java
+String street = "Carrer Moncada";
+String name = "Benito Fuentes";
+```
+
+These variables are saved in memory as objects.
+
+#### Constructor
+
+```java
+String someText = new String();
+String street = new String("Carrer Moncada");
+String anotherText = new String(street);
+```
+
+Do you remember we told `String` are a collection of `character`s?
+So let's create an `String` using a collection of `character`s.
+
+First of all a `character` is a data type and can be created using single quotes.
+
+```java
+char a = 'A';
+char a = 65;
+```
+So let's build an `String` using `char`s:
+
+```java
+char[] charCollection = {'H', 'e', 'l', 'l', 'o'};
+String helloText = new String(charCollection); // Output: Hello
+```
+
+### Concatenations
+
+The concatenation operation is the action of join to different strings in one.
+
+```java
+String firstName = "Benito";
+String lastName = new String("Fuentes");
+String fullName = firstName + " " + lastName;
+System.out.println(fullName); // Output: Benito Fuentes
+
+fullName = firstName.concat(" ").concat(lastName);
+System.out.println(fullName); // Output: Benito Fuentes
+```
+
+As you can see we can use `+` operator to join/concat two `String` in once, that we are saving in `fullName` variable.
+But also we use `.concat` method, and this is possible because if you remember, we told `String` is a custom data type and also is a class that we can create instances by literals or its contructor.
+If you take a time to read the documentation link I have putted for you, you will see a lot of ways for create an `String` and also a lot of methods we can use by accessing to it by the instance.
+
+### Strings are immutable
+
+`String`s are immutable as the class does not provide any method to modify the content of an `String` after this is created. This mean that once the `String` is created the characters that it contains can not be modified.
+So let's check an example to be in mind and avoid confusion while you code and don't get the expected result:
+
+```java
+String name = "Benito";
+name.concat(" Fuentes");
+System.out.println(name); // Output: Benito
+```
+
+This example return 'Benito' because `String` are immutable and there is not any method on it to modify its content.
+
+```java
+String name = "Benito";
+System.out.println(name.hashCode()); // Output: 1986181209
+
+name=name.concat(" Fuentes");
+System.out.println(name.hashCode()); // Output: -260495741
+```
+
+The `.hashCode` method is that return a identifier that is stored in the instance of the class. And as we can see we get a new instance of the string instead of a modified version.
+
+
+### StringBuilder
+
+[StringBuilder Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+
+We have just seen that strings are collection of characters that, once created, cannot be modified. 
+But now we will see just the opposite, how to create strings that can be modified, and that thanks to **StringBuilder**, as `StringBuilder` provide
+a dynamic capacity.
+
+#### Important considerations
+It is very important to know that Java can do some optimizations that involve `String` objects instances, like make references to 
+a `String` object from multiples variables, because Java knows that `String`s are immutables and its value won't change. So if the state of the 
+string won't change please use `String` object and don't use `StringBuilder`.
+
+If you are tasked to write a program that will work with `String`s and a lot of manipulations over those `String`s will happen, please use 
+`StringBuilder` because it is more efficient do those operations over a `StringBuilder`.
+
+Another important fact is that objects of `StringBuilder` are not secure to use them with `Thread` (a concept we will see soon). If you have
+the case that multiples `Threads` please use `StringBuffer`, both `StringBuilder` and `StringBuffer` offer dynamic capacity, but `StringBuffer`
+is more secure with `Threads`.
+
+We will be working with `Threads` sooner. Don't worry about it, is a concept that is very important but for now does not matter now.
+
+#### How to create Strings with StringBuilder
+
+StringBuilder set the capacity of the instance base on the passed string length + 16.
+
+```java
+StringBuilder str = new StringBuilder();
+System.out.println(str.capacity()); // Output: 16
+System.out.println(str.length()); // Output: 0
+```
+
+Now let's see another case:
+
+```java
+StringBuilder str = new StringBuilder("Hello");
+int len = str.length();
+System.out.println(len == 5); // Output: true
+System.out.println(str.capacity() == len + 16); // Output: true
+```
+
+As you can see we made some type of asserting using the `StringBuffer#length`, wich return the total characters in the instance, and
+we proved that the capacity is equal to the total of the current characters + 16.
+
+
+#### The following operations you can apply to `StringBuilder`
+- Insert at any position
+- Delete any character, substring, etc
+- Reverse
+- Replace
+- Substrings
+- etc
