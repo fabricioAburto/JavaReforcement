@@ -10,7 +10,7 @@ is about learn Java and its syntax.
 - Data Types
 - Features And Architecture
 - String and Printing
-- Control Instructions: Assignment Operators
+- Control Instructions
   - Conditional Statements
   - Loops
 - Arrays and ArrayList
@@ -305,3 +305,90 @@ we proved that the capacity is equal to the total of the current characters + 16
 - Replace
 - Substrings
 - etc
+
+## Control Instructions
+
+One important fact you need to know before is how the code is read.
+
+### How the code is read by the machine.
+
+Please check the order of the prints in the output after run the following program:
+```java
+System.out.println("Instruction 1");
+System.out.println("Instruction 2");
+System.out.println("Instruction 3");
+```
+
+```
+Ouput:
+Instruction 1
+Instruction 2
+Instruction 3
+```
+
+As you can see the flow is secuencial, from up down, one by one line of code.
+
+But now imagine you are tasked to write a program that check is a customer can access to a discount
+
+```
+Use Case: 
+
+
+Given a payment action, apply discount base on the following conditions:
+
+There are two type of customers:
+- Golden
+- Platinum
+- Normal
+
+Golden Customers can access to 50% off in all products
+Platinum Customers can access to 25% off only for kitchen products.
+Normal Customers can access to 5% off to all products.
+```
+
+So now think in how we can make our program move correctly to distinguish which instructions read and which on not.
+if at the moment we told it read the program line by line.
+
+
+So for doing that, we need to set the read flow. Which instruction read, and which instruction not, how many
+times it needs to doing, and under which conditions, etc. For doing that we need `Control Instructions`.
+
+### Conditions: If else
+
+
+Let's talk about `if` first. Please don't put more attention in the custom types, and fix the view under the logic.
+
+```java 
+public class Main {
+    public static void main(String[] args) {
+        Customer customer = new Customer(1, "Benito", "Golden");       
+        Product p = new Product("laptop", 3400.99d, "electronic");
+        float discount = 5;
+        
+        if(customer.isGold()) discount = 50;
+        if(customer.isPlatinum() && p.getCategory() == 'kitchen') discount = 25;
+        
+        double total = (p.getPriceWithIVA() * discount) / 100;
+        
+        System.out.println("Total to pay: " + total); 
+    }
+}
+```
+
+The `if` structure and how it works:
+
+```
+if(condition){
+ // This is the body of the if:
+ // all instructions inside here will be read and executed
+ // only in the condition inside the parenthesis are true.
+}
+```
+
+Knowing that in our code example, the customer we have is a `Golden` type, 
+so the body of the if `if(customer.isGold()){}` will be read and the body of the `if(customer.isPlatinum() && p.getCategory() == 'kitchen')` will be
+ignored, because the customer is not `platinum` and the product is not `kitchen` type.
+
+So as you can see we are taking the control of the flow of how the instruction are read.
+
+
